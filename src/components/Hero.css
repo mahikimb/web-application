@@ -1,0 +1,254 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1A73E8 0%, #0F3D91 100%);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(249, 168, 37, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(26, 115, 232, 0.15) 0%, transparent 50%);
+  opacity: 0.6;
+  animation: pulse 15s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.hero-logo {
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out, logoTransition 4s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+@keyframes logoTransition {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.08) translateY(-5px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.05) translateY(-3px);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.hero-logo:hover {
+  transform: scale(1.15) translateY(-8px);
+  animation-play-state: paused;
+}
+
+/* Hero logo shows in original colors like navbar */
+.hero-logo .logo-icon {
+  filter: none;
+}
+
+.hero-logo .logo-image {
+  filter: none;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-logo .logo-text-softica,
+.hero-logo .logo-text-labs {
+  color: white;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-tagline {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.95);
+  min-height: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.animated-word {
+  display: inline-block;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.animated-word.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: wordAppear 0.6s ease-out forwards;
+}
+
+.animated-word.hidden {
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  animation: wordDisappear 0.5s ease-in forwards;
+}
+
+@keyframes wordAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes wordDisappear {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+  }
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-cta {
+  background-color: #F9A825;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out 0.6s both;
+  box-shadow: 0 4px 15px rgba(249, 168, 37, 0.3);
+}
+
+.hero-cta:hover {
+  background-color: #FFB300;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 168, 37, 0.4);
+}
+
+.hero-cta:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.3rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+
+  .logo-container.large .logo-icon {
+    width: 150px;
+    height: 150px;
+  }
+
+  .logo-container.large .logo-image {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .logo-container.large .logo-text-softica,
+  .logo-container.large .logo-text-labs {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
+}
+

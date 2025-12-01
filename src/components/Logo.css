@@ -1,0 +1,119 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.logo-icon {
+  flex-shrink: 0;
+  display: block;
+}
+
+.logo-image {
+  object-fit: contain;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.logo-container.small .logo-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.logo-container.small .logo-image {
+  max-width: 35px;
+  max-height: 35px;
+  width: auto;
+  height: auto;
+}
+
+.logo-container.medium .logo-icon {
+  width: 120px;
+  height: 120px;
+}
+
+.logo-container.medium .logo-image {
+  max-width: 120px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+}
+
+.logo-container.large .logo-icon {
+  width: 200px;
+  height: 200px;
+}
+
+.logo-container.large .logo-image {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-text-softica {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0F3D91;
+  letter-spacing: 0.5px;
+}
+
+.logo-text-labs {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0F3D91;
+  letter-spacing: 0.5px;
+}
+
+.logo-container.small .logo-text-softica,
+.logo-container.small .logo-text-labs {
+  font-size: 0.9rem;
+}
+
+.logo-container.medium .logo-text-softica,
+.logo-container.medium .logo-text-labs {
+  font-size: 2rem;
+}
+
+.logo-container.large .logo-text-softica,
+.logo-container.large .logo-text-labs {
+  font-size: 2.2rem;
+}
+
+@media (max-width: 768px) {
+  .logo-container.medium .logo-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .logo-container.medium .logo-image {
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .logo-container.medium .logo-text-softica,
+  .logo-container.medium .logo-text-labs {
+    font-size: 1.5rem;
+  }
+
+  .logo-container.large .logo-icon {
+    width: 150px;
+    height: 150px;
+  }
+
+  .logo-container.large .logo-image {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
